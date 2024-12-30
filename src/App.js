@@ -1,9 +1,13 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import AppRoutes from './routes/AppRoutes';
+import Header from './components/Header';
 
 const App = () => (
-  <div>
-    <h1>Bem-vindo ao Dois Embarcando</h1>
-  </div>
+  <Router>
+    <Header />
+    <AppRoutes />
+  </Router>
 );
 
 export default App;

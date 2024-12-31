@@ -1,9 +1,17 @@
-import React from 'react';
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import Header from "./components/Header"; // Header contendo NavBar
+//import Footer from "./components/Footer";
+import AppRoutes from "./routes/AppRoutes";
 
-const App = () => (
-  <div>
-    <h1>Bem-vindo ao Dois Embarcando</h1>
-  </div>
-);
+const App = () => {
+  return (
+    <Router>
+      <Header /> {/* NavBar será parte do Header */}
+      <AppRoutes />
+      {/*<Footer />*/}
+    </Router>
+  );
+};
 
 export default App;

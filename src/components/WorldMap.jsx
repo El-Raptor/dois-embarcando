@@ -5,18 +5,20 @@ import {
   Geography,
   ZoomableGroup,
 } from "react-simple-maps";
+import { useNavigate } from "react-router-dom";
 
 const geoUrl = "https://unpkg.com/world-atlas@2.0.2/countries-50m.json";
 
 const WorldMap = () => {
   const [position, setPosition] = useState({ coordinates: [0, 0], zoom: 1 });
+  const navigate = useNavigate();
 
   const handleMoveEnd = (position) => {
     setPosition(position); // Atualiza as coordenadas e o nível de zoom ao finalizar a movimentação
   };
 
   const handleCountryClick = (country) => {
-    alert(`Você clicou em: ${country}`);
+    navigate(`/country/${country}`)
   };
 
   return (

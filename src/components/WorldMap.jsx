@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import {
   ComposableMap,
   Geographies,
@@ -20,30 +20,36 @@ const WorldMap = () => {
   };
 
   return (
-    <ComposableMap>
-      <ZoomableGroup
-        center={position.coordinates}
-        zoom={position.zoom}
-        onMoveEnd={handleMoveEnd} // Atualiza a posição ao finalizar o movimento
+    <div style={{ width: "60%", margin: "0 auto" }}>
+      <ComposableMap
+        width={800} // Largura do mapa
+        height={400} // Altura do mapa
+        projectionConfig={{ scale: 160 }} // Ajuste da escala
       >
-        <Geographies geography={geoUrl}>
-          {({ geographies }) =>
-            geographies.map((geo) => (
-              <Geography
-                key={geo.rsmKey}
-                geography={geo}
-                onClick={() => handleCountryClick(geo.properties.name)}
-                style={{
-                  default: { fill: "#D6D6DA", outline: "none" },
-                  hover: { fill: "#F53", outline: "none" },
-                  pressed: { fill: "#E42", outline: "none" },
-                }}
-              />
-            ))
-          }
-        </Geographies>
-      </ZoomableGroup>
-    </ComposableMap>
+        <ZoomableGroup
+          center={position.coordinates}
+          zoom={position.zoom}
+          onMoveEnd={handleMoveEnd} // Atualiza a posição ao finalizar o movimento
+        >
+          <Geographies geography={geoUrl}>
+            {({ geographies }) =>
+              geographies.map((geo) => (
+                <Geography
+                  key={geo.rsmKey}
+                  geography={geo}
+                  onClick={() => handleCountryClick(geo.properties.name)}
+                  style={{
+                    default: { fill: "#D6D6DA", outline: "none" },
+                    hover: { fill: "#F53", outline: "none" },
+                    pressed: { fill: "#E42", outline: "none" },
+                  }}
+                />
+              ))
+            }
+          </Geographies>
+        </ZoomableGroup>
+      </ComposableMap>
+    </div>
   );
 };
 

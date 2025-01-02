@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: El-Raptor/dois-embarcando  # Ou o branch do seu repositório
+  branch: main  # Ou o branch do seu repositório
   base_url: https://doisembarcando.netlify.app/
   auth_endpoint: api/auth/
 

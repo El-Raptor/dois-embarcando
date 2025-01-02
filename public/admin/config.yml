@@ -1,0 +1,21 @@
+backend:
+  name: git-gateway
+  branch: main  # Ou o branch do seu repositório
+  base_url: https://doisembarcando.netlify.app/
+  auth_endpoint: api/auth/
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "country"
+    label: "Country"
+    folder: "src/content/countries"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Country Name", name: "name", widget: "string" }
+      - { label: "Country Description", name: "description", widget: "text" }
+      - { label: "Language", name: "language", widget: "string" }
+      - { label: "Currency", name: "currency", widget: "string" }
+      - { label: "Population", name: "population", widget: "string" }

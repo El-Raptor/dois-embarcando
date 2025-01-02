@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: main  # Ou o branch do seu repositório
+  branch: main  # Branch do seu repositório
   base_url: https://doisembarcando.netlify.app/
   auth_endpoint: api/auth/
 
@@ -8,8 +8,8 @@ media_folder: "public/images"
 public_folder: "/images"
 
 collections:
-  - name: "country"
-    label: "Country"
+  - name: "countries"
+    label: "Countries"
     folder: "src/content/countries"
     create: true
     slug: "{{slug}}"
@@ -18,4 +18,58 @@ collections:
       - { label: "Country Description", name: "description", widget: "text" }
       - { label: "Language", name: "language", widget: "string" }
       - { label: "Currency", name: "currency", widget: "string" }
-      - { label: "Population", name: "population", widget: "string" }
+      - { label: "Population", name: "population", widget: "number" }
+      - { label: "Visa Requirements", name: "visa_requirements", widget: "text" }
+      - { label: "Traditions and Culture", name: "traditions", widget: "markdown" }
+      - { label: "Transportation Guide", name: "transportation_guide", widget: "markdown" }
+      - { label: "Highlights", name: "highlights", widget: "list", fields: 
+          - { label: "Name", name: "highlight_name", widget: "string" }
+          - { label: "Description", name: "highlight_description", widget: "text" } }
+      - { label: "Images", name: "images", widget: "list", fields: 
+          - { label: "Image", name: "image", widget: "image" }
+          - { label: "Description", name: "image_description", widget: "string" } }
+
+  - name: "regions"
+    label: "Regions"
+    folder: "src/content/regions"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Region Name", name: "name", widget: "string" }
+      - { label: "Region Description", name: "description", widget: "text" }
+      - { label: "Highlights", name: "highlights", widget: "list", fields: 
+          - { label: "Name", name: "highlight_name", widget: "string" }
+          - { label: "Description", name: "highlight_description", widget: "text" } }
+      - { label: "Images", name: "images", widget: "list", fields: 
+          - { label: "Image", name: "image", widget: "image" }
+          - { label: "Description", name: "image_description", widget: "string" } }
+
+  - name: "cities"
+    label: "Cities"
+    folder: "src/content/cities"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "City Name", name: "name", widget: "string" }
+      - { label: "City Description", name: "description", widget: "text" }
+      - { label: "Best Time to Visit", name: "best_time", widget: "string" }
+      - { label: "Transportation", name: "transportation", widget: "text" }
+      - { label: "Tourist Rating", name: "rating", widget: "number" }
+      - { label: "Highlights", name: "highlights", widget: "list", fields: 
+          - { label: "Name", name: "highlight_name", widget: "string" }
+          - { label: "Description", name: "highlight_description", widget: "text" } }
+      - { label: "Images", name: "images", widget: "list", fields: 
+          - { label: "Image", name: "image", widget: "image" }
+          - { label: "Description", name: "image_description", widget: "string" } }
+
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list", default: [] }
+      - { label: "Featured Image", name: "featured_image", widget: "image" }

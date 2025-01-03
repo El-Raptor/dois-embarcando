@@ -10,7 +10,7 @@ public_folder: "/images"
 collections:
   - name: "countries"
     label: "Countries"
-    folder: "src/content/countries"
+    folder: "public/content/countries"
     create: true
     slug: "{{fields.name | slugify}}"
     fields:
@@ -61,7 +61,7 @@ collections:
 
   - name: "regions"
     label: "Regions"
-    folder: "src/content/regions"
+    folder: "public/content/regions"
     create: true
     slug: "{{fields.name | slugify}}"
     fields:
@@ -94,7 +94,7 @@ collections:
 
   - name: "cities"
     label: "Cities"
-    folder: "src/content/cities"
+    folder: "public/content/cities"
     create: true
     slug: "{{fields.name | slugify}}"
     fields:
@@ -136,7 +136,7 @@ collections:
 
   - name: "blog"
     label: "Blog Posts"
-    folder: "src/content/blog"
+    folder: "public/content/blog"
     create: true
     slug: "{{fields.name | slugify}}"
     fields:

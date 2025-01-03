@@ -1,5 +1,5 @@
 ---
-name: united-states-of-america
+name: United States of America
 description: Os Estados Unidos da América é um país situado na América do Norte.
 language: Inglês
 currency: Dólar

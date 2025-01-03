@@ -18,7 +18,8 @@ const WorldMap = () => {
   };
 
   const handleCountryClick = (country) => {
-    navigate(`/country/${country}`)
+    const slug = country.toLowerCase().replace(/ /g, "-"); // Gera o slug do país
+    navigate(`/countries/${slug}`); // Redireciona para a página do país
   };
 
   return (
